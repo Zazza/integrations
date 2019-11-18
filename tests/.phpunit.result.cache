@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":312:{a:2:{s:7:"defects";a:3:{s:27:"DocumentTest::testAddRecord";i:4;s:33:"MailerliteTest::testAddSubscriber";i:3;s:32:"MailchimpTest::testAddSubscriber";i:5;}s:5:"times";a:3:{s:27:"DocumentTest::testAddRecord";d:0.015;s:33:"MailerliteTest::testAddSubscriber";d:0.788;s:32:"MailchimpTest::testAddSubscriber";d:0.618;}}}

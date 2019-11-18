@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+</head>
+<body>
+    <input type="text" id="subcriber-name">
+    <input type="text" id="subcriber-email">
+    <input type="button" id="subcriber-add" value="Добавить">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var Tasks = [
+            {
+                integration: {
+                    service: "mailerlite",
+                        apiKey: "493ede2b62a8027a21267c15c570b1b4",
+                        groupId: 14395208,
+                },
+                lead: {
+                    name: "Вася",
+                        email: "vasya@platformalp.ru",
+                },
+            },
+            {
+                integration: {
+                    service: "mailchimp",
+                        apiKey: "33f401b170e95096e9169206b229793d-us13",
+                        listId: 341781,
+                },
+                lead: {
+                    name: "Петр",
+                        email: "petr@platformalp.ru",
+                },
+            }
+        ];
+
+        $('#subcriber-add').click(function () {
+            var subcriberName = $('#subcriber-name').val();
+            var subcriberEmail = $('#subcriber-email').val();
+
+            $.ajax({
+                url: "/integrations/addSubscriber/",
+                type: "POST",
+                data: {Tasks: Tasks, name: subcriberName, email: subcriberEmail},
+                dataType: 'JSON'
+            })
+                .done(function (response) {
+                    if (response.result) {
+                        alert('!');
+                    }
+                });
+        });
+    });
+</script>
+</body>
+</html>
